@@ -1,38 +1,164 @@
-.App {
-  text-align: center;
+body {
+  margin: 0;
+  background: radial-gradient(circle at top, #a81ac4, #1ad0e4);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+.page {
   min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  color: white;
+  padding-bottom: 80px;
+}
+
+.header {
+  text-align: center;
+  padding: 72px 24px 48px;
+}
+
+.title {
+  font-size: 56px;
+  margin: 0;
+  font-weight: 800;
+  letter-spacing: -1px;
+}
+
+.subtitle {
+  margin-top: 10px;
+  font-size: 13px;
+  color: #5deb05;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  grid-auto-rows: minmax(160px, auto);
+  gap: 28px;
+}
+
+.card {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  background: linear-gradient(180deg, #0f1623, #0a0f1a);
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+  animation: fadeUp 0.6s ease forwards;
+  opacity: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-featured {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.card-medium {
+  grid-row: span 2;
+}
+
+.card-small {
+  grid-row: span 1;
+}
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.content {
+  padding: 16px 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.articleTitle {
+  font-size: 18px;
+  line-height: 1.4;
+  font-weight: 500;
+  margin: 0;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: #1e293b;
+  color: #93c5fd;
+  font-weight: 600;
+}
+
+/* FEATURED BADGE */
+.badge {
+  align-self: flex-start;
+  font-size: 11px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #3b82f6, #06b6d4);
   color: white;
+  font-weight: 700;
 }
 
-.App-link {
-  color: #61dafb;
+/* AI */
+.ai-button {
+  margin-top: 6px;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+  border: none;
+  border-radius: 999px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #064e3b;
+  cursor: pointer;
+  align-self: flex-start;
 }
 
-@keyframes App-logo-spin {
+.ai-button:hover {
+  filter: brightness(1.15);
+}
+
+.summary {
+  font-size: 13px;
+  color: #cbd5f5;
+  line-height: 1.5;
+}
+
+/* HOVER */
+.card:hover {
+  transform: translateY(-8px) scale(1.015);
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.9);
+}
+
+/* ANIMATION */
+@keyframes fadeUp {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(30px) scale(0.98);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 800px) {
+  .card-featured {
+    grid-column: span 1;
   }
 }
