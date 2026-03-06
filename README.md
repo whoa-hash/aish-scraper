@@ -20,6 +20,7 @@ You may also see any lint errors in the console.
 3. Create AishWidget component for Gemini AI search suggestion
 4. run App.js for React App
 
-   Result ![Uploading image.png…]()
+   Result<img width="1646" height="817" alt="image" src="https://github.com/user-attachments/assets/26aabc52-f683-4a10-831d-bbd558950a7e" />
+
 
    
